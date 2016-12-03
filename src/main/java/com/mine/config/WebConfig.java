@@ -13,7 +13,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.mine.config") // There must be your package with all java classes.
+// For all "Why?" questions about this @ComponentScan, please, read about ContextLoaderListener and DispatcherServlet.
+@ComponentScan("com.mine") // There must be your package with all java classes. (Briefly)
 @Import({HibernateConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
     // It is where to take pages. For example "home" will be taken from prefix+"home"+suffix.
