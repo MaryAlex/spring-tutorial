@@ -1,6 +1,6 @@
 package com.mine.controller;
 
-import com.mine.service.ContactService;
+import com.mine.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +11,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 public class HomeController {
 
     @Autowired
-    private ContactService contactService;
+    private UserService userService;
 
     @RequestMapping(value = "/", method = GET)
     public String home() {
-        System.out.println(this.contactService.getContacts().get(0).getName());
+        System.out.println(this.userService.getUsers().get(0).getName());
         return "home";
     }
 }

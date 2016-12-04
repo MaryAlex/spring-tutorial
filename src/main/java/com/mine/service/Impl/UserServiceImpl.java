@@ -1,22 +1,22 @@
 package com.mine.service.Impl;
 
-import com.mine.dao.ContactDao;
-import com.mine.model.Contact;
-import com.mine.service.ContactService;
+import com.mine.dao.UserDao;
+import com.mine.model.User;
+import com.mine.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service("contactService")
+@Service("userService")
 @Transactional // It must be here, in service. NOT IN DAO. IMPORTANT!
-public class ContactServiceImpl implements ContactService {
+public class UserServiceImpl implements UserService {
     @Autowired
-    private ContactDao contactDao;
+    private UserDao userDao;
 
     @Override
-    public List<Contact> getContacts() {
-        return this.contactDao.getContacts();
+    public List<User> getUsers() {
+        return this.userDao.getUsers();
     }
 }

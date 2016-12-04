@@ -1,7 +1,7 @@
 package com.mine.dao.Impl;
 
-import com.mine.dao.ContactDao;
-import com.mine.model.Contact;
+import com.mine.dao.UserDao;
+import com.mine.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository("contactDao")
-public class ContactDaoImpl implements ContactDao {
+@Repository("userDao")
+public class UserDaoImpl implements UserDao {
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -20,7 +20,7 @@ public class ContactDaoImpl implements ContactDao {
     }
 
     @Override
-    public List<Contact> getContacts() {
-        return this.getSessionFactory().createQuery("from Contact", Contact.class).list();
+    public List<User> getUsers() {
+        return this.getSessionFactory().createQuery("from User", User.class).list();
     }
 }
