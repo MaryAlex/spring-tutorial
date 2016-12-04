@@ -14,8 +14,7 @@ public class ContactDaoImpl implements ContactDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    private Session getSessionFactory()
-    {
+    private Session getSessionFactory() {
         return sessionFactory.getCurrentSession();
     }
 
