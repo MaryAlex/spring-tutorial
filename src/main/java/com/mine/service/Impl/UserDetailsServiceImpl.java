@@ -16,6 +16,7 @@ import java.util.Set;
 
 @Transactional
 @Service("userDetailsService")
+// We create this implenent(create this service) for Spring security
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     UserDao userDao;
