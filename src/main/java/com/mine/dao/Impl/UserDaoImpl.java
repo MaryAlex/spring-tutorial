@@ -14,8 +14,7 @@ public class UserDaoImpl implements UserDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    private Session getSessionFactory()
-    {
+    private Session getSessionFactory() {
         return sessionFactory.getCurrentSession();
     }
 
