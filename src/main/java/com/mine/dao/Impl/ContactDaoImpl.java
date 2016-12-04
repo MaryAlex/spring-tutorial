@@ -21,6 +21,6 @@ public class ContactDaoImpl implements ContactDao {
 
     @Override
     public List<Contact> getContacts() {
-        return this.getSessionFactory().createQuery("from Contact").list();
+        return this.getSessionFactory().createQuery("from Contact", Contact.class).list();
     }
 }

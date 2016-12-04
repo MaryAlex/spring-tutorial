@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service("contactService")
-@Transactional
+@Transactional // It must be here, in service. NOT IN DAO. IMPORTANT!
 public class ContactServiceImpl implements ContactService {
     @Autowired
     private ContactDao contactDao;
