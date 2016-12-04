@@ -7,8 +7,8 @@
     <!-- The Basics -->
     <groupId>com.mine</groupId> <!--Organization name reversed-->
     <artifactId>SpringTut</artifactId> <!--Project name-->
-    <version>1.0-SNAPSHOT</version>
-    <build>
+    <version>1.0-SNAPSHOT</version> <!--Version. SNAPSHOT means it just creates and would be many changes-->
+    <build> <!-- Was generated automatically -->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -19,7 +19,7 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build> <!--Version. SNAPSHOT means it just creates and would be many changes-->
+    </build>
     <packaging>war</packaging> <!--Type of result os build. Can be pom, jar, war, ear.-->
 
     <!-- Information for people, not for maven-->
@@ -32,6 +32,9 @@
         <spring.version>4.3.4.RELEASE</spring.version>
         <spring.security.version>4.2.0.RELEASE</spring.security.version>
         <hibernate.version>5.2.5.Final</hibernate.version>
+        <mysql.version>5.1.32</mysql.version>
+        <javaxservlet.version>3.1.0</javaxservlet.version>
+        <jstl.version>1.2</jstl.version>
     </properties>
 
     <!--Libraries-->
@@ -43,14 +46,14 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
+            <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
 
@@ -61,16 +64,22 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>${spring.version}</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.32</version>
-            <scope>runtime</scope>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javaxservlet.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
         </dependency>
 
     </dependencies>
